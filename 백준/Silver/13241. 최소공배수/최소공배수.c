@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int uc(long long int x, long long int y);
+int uc(long long int a, long long int b);
 
 int main() {
     long long int a, b;
