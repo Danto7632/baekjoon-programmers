@@ -13,10 +13,10 @@ int main() {
 int uc(int a, int b)
 {
     int x=a>b?a:b, y=a>b?b:a, z;
-    while (b != 0){
-        z = a%b;
-        a = b;
-        b = z;
+    while (y != 0){
+        z = x%y;
+        x = y;
+        y = z;
     }
-    return a;
+    return x;
 }
