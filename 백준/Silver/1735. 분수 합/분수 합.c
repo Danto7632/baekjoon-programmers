@@ -12,11 +12,11 @@ int main() {
 
 int uc(int a, int b)
 {
-    int x=a>b?a:b, y=a>b?b:a, z;
-    while (y != 0){
-        z = x%y;
-        x = y;
-        y = z;
+    int c;
+    while (b != 0){
+        c = a%b;
+        a = b;
+        b = c;
     }
-    return x;
+    return a;
 }
