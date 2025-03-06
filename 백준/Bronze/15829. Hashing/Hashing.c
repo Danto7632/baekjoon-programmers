@@ -1,14 +1,19 @@
 #include <stdio.h>
-#include <math.h>
 
 int main() {
-    int n,sum=0;
+    long long int n,mod,sum=0;
     char a;
-    scanf("%d", &n);
+    scanf("%lld", &n);
     scanf("%c", &a);//의도된건지 줄내림이 공백 문자로 받아짐
     for (int i=0;i<n;i++){
+        mod=1;
         scanf("%c", &a);
-        sum+=(a-96)*(int)pow(31,i);
+        for (int j=0;j<i;j++){
+            mod*=31;
+            mod%=1234567891;
+        }
+        sum+=(long long int)(a-96)*mod;
+        sum%=1234567891;
     }
-    printf("%d",sum);
+    printf("%lld",sum);
 }
