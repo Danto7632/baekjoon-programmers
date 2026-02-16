@@ -8,11 +8,11 @@ int main() {
     cin >> n;
     for (int i=0;i<n;i++){
         cin >> c;
-        if (c=='j'||c=='i'){
-            count+=2;
+        if (c=='o'){
+            count++;
         }
         else {
-            count++;
+            count+=2;
         }
     }
     cout << count;
