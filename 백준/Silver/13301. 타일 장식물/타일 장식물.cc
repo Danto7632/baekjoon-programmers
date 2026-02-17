@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    int n,n1=4,n2=6,n3;
+    long long int n,n1=4,n2=6,n3;
     cin >> n;
     if (n>=3){
         for (int i=3;i<=n;i++){
