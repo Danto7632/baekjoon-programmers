@@ -1,56 +1,47 @@
 #include <iostream>
-#include <algorithm>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
-struct student{
+struct student {
     string name;
-    int korean;
-    int english;
-    int math;
+    int k;
+    int e;
+    int m;
 };
 
-bool compare(const student& p1, const student& p2);
+int custom(student x, student y);
 
 int main() {
-    int n;
-    cin >> n;
-    vector<student> member(n);
-    for (int i=0;i<n;i++){
-        cin >> member[i].name >> member[i].korean >> member[i].english >> member[i].math;
+    int N;
+    cin >> N;
+    vector<student> arr(N);
+    for (int i=0;i<N;i++){
+        cin >> arr[i].name >> arr[i].k >> arr[i].e >> arr[i].m;
     }
-    sort(member.begin(),member.end(),compare);
-
-    for (int i=0;i<n;i++){
-        cout << member[i].name << "\n";
+    sort(arr.begin(),arr.end(),custom);
+    for (int i=0;i<N;i++){
+        cout << arr[i].name << "\n";
     }
 }
 
-bool compare(const student& p1, const student& p2){
-    if (p1.korean > p2.korean){
-        return true;
+int custom(student x, student y){
+    if (x.k>y.k){
+        return 1;
     }
-    else if (p1.korean==p2.korean){
-        if (p1.english < p2.english){
-            return true;
+    else if (x.k==y.k){
+        if (x.e<y.e){
+            return 1;
         }
-        else if (p1.english == p2.english){
-            if (p1.math > p2.math){
-                return true;
+        else if (x.e==y.e){
+            if (x.m>y.m){
+                return 1;
             }
-            else if (p1.math == p2.math){
-                return p1.name<p2.name;
-            }
-            else {
-                return false;
+            else if (x.m==y.m){
+                return x.name<y.name;
             }
         }
-        else {
-            return false;
-        }
     }
-    else {
-        return false;
-    }
+    return 0;
 }
