@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-    int N,a,b,sum=0;
+    int N,a,sum=0;
     cin >> N;
     vector<int> arr(N);
     vector<int> stack(N,0);
