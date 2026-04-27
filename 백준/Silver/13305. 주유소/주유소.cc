@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-    int N,a,min=1000000001,sum=0;
+    long long int N,a,min=1000000001,sum=0;
     cin >> N;
     vector<int> arr(N,0);
     for (int i=0;i<N-1;i++){
